@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2025 The Stdlib Authors.
@@ -16,28 +16,34 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
+
+import { NumericArray, Collection, AccessorArrayLike } from '@stdlib/types/array';
 
 /**
-* Compute the maximum value of an array according to a mask, ignoring `NaN` values.
+* Input array.
+*/
+type InputArray = NumericArray | Collection<number> | AccessorArrayLike<number>;
+
+/**
+* Computes the maximum value of an array according to a mask, ignoring `NaN` values.
 *
-* @module @stdlib/stats-array-nanmskmax
+* @param x - input array
+* @param mask - mask array
+* @returns maximum value
 *
 * @example
-* var nanmskmax = require( '@stdlib/stats-array-nanmskmax' );
-*
 * var x = [ 1.0, -2.0, NaN, 2.0 ];
 * var mask = [ 0, 1, 0, 0 ];
 *
 * var v = nanmskmax( x, mask );
 * // returns 2.0
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function nanmskmax( x: InputArray, mask: InputArray ): number;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = nanmskmax;
